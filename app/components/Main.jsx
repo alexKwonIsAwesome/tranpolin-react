@@ -2,15 +2,14 @@ var React = require('react');
 
 var Navigation = require('Navigation');
 
-var Main = React.createClass({
-  render: function () {
-    return (
-      <div>
-        <Navigation/>
-        Hello world!
-      </div>
-    )
-  }
-});
+var Main = (props) => {
+  return (
+    <div>
+      <Navigation/>
+      Hello world!
+      {props.children}
+    </div>
+  );
+};
 
 module.exports = Main;
