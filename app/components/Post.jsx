@@ -2,9 +2,11 @@ var React = require('react');
 
 var Post = React.createClass({
   render: function () {
+    var {id, title, content} = this.props;
     return (
       <div>
-        Single Post
+        <h1>{title}</h1>
+        <p>{content}</p>
       </div>
     )
   }

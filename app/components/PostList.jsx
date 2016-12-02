@@ -1,5 +1,7 @@
 var React = require('react');
 
+var Post = require('Post');
+
 var PostList = React.createClass({
   getInitialState: function () {
     return {
@@ -20,12 +22,19 @@ var PostList = React.createClass({
       ]
     }
   },
+  renderPosts: function (posts) {
+    return posts.map((post) => {
+        return (
+          <Post key={post.id} {...post}/>
+        )
+    });
+  },
   render: function () {
     return (
       <div>
-        Postlist
+        {this.renderPosts(this.state.posts)}
       </div>
-    )
+    );
   }
 });
 
